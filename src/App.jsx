@@ -3,17 +3,45 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ResponsiveAppBar from './components/bar2'
-import ButtonAppBar from './components/bar'
-import MyMenu from './components/categories'
+import Dropdown from './components/categories'
+import ImageBanner from './components/banner'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import Product from './components/Product'
+import { productData, responsive } from "./components/data";
+import CatName from './components/catName'
+import Colag1 from './components/collage1'
+
+
 
 function App() {
   const [count, setCount] = useState(0)
+  const product = productData.map((item) => (
+    <Product
+      name={item.name}
+      url={item.imageurl}
+      price={item.price}
+      description={item.description}
+    />
+  ));
 
   return (
-    <>
+    <div>
       <ResponsiveAppBar/>
-      <MyMenu/>
-    </>
+      <div style={{height:'10px'}}></div>
+      <Dropdown />
+      <ImageBanner/>
+      <div style={{height:'300px'}}></div>
+      <CatName categoryHeading="Categories" productHeading="Popular Categories"/>
+      <div style={{height:'20px'}}></div>
+      <Carousel  responsive={responsive}>
+        {product}
+      </Carousel>
+      <div style={{height:'20px'}}></div>
+      <CatName categoryHeading="Featured" productHeading="New Arrival"/>
+      <div style={{height:'20px'}}></div>
+      <Colag1/>
+    </div>
   )
 }
 

@@ -14,6 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import logo from '/dealsorb/src/assets/logo.png'
 import CustomizedInputBase from './searcBar1'
+import ImageBanner from './banner'
 
 const pages = ["Home", "Categories", "Deal & Coupons", "About US"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -38,7 +39,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-   <Box sx={{position:"absolute", top:0,width: '100%',}}>
+   
+    <Box sx={{right:'0',left:'0',width: '100%',}}>
     <Box sx={{position:"static",backgroundColor:'black',height:{ xs: 0,md:35,lg:48},display: { xs: "none",md:"flex",lg:"flex"},alignItems:"center",justifyContent:"center"}}> 
     <Typography textAlign="center" sx={{color:"white",fontSize:{xs: 0,md:10,lg:15}}}>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</Typography>
     <Typography  textAlign="center" sx={{color:"white",fontSize:{xs: 0,md:10,lg:15}}}>Shop Now</Typography>
@@ -166,6 +168,7 @@ function ResponsiveAppBar() {
       </Container>
     </AppBar>
    </Box>
+   
   );
 }
 export default ResponsiveAppBar;
