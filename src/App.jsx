@@ -11,6 +11,8 @@ import Product from './components/Product'
 import { productData, responsive } from "./components/data";
 import CatName from './components/catName'
 import Colag1 from './components/collage1'
+import BasicGrid from './components/grid1'
+import ProductCard1 from './components/widgets/productCard'
 
 
 
@@ -38,9 +40,8 @@ function App() {
         {product}
       </Carousel>
       <div style={{height:'20px'}}></div>
-      <CatName categoryHeading="Featured" productHeading="New Arrival"/>
-      <div style={{height:'20px'}}></div>
-      <Colag1/>
+      <BasicGrid/>
+      <ProductCard1/>
     </div>
   )
 }
