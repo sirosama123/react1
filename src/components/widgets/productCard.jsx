@@ -7,8 +7,9 @@ import Typography from "@mui/material/Typography";
 import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import IconButton from '@mui/material/IconButton';
+import Looks from '@mui/icons-material/Looks';
 
-export default function ProductCard1() {
+export default function ProductCard1(props) {
     return (
         <Box
             sx={{
@@ -17,6 +18,8 @@ export default function ProductCard1() {
                 borderRadius: '5px',
                 backgroundColor: '#F5F5F5',
                 position: 'relative',
+                boxShadow: '0 4px 8px black',
+                marginY:"20px"
             }}
         >  
             <Box
@@ -24,6 +27,7 @@ export default function ProductCard1() {
                     height: '220px',
                     width: '250px',
                     borderRadius: '5px',
+                    
                     backgroundColor: 'red',
                     display: 'flex',
                     alignItems: 'center',
@@ -41,7 +45,7 @@ export default function ProductCard1() {
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundImage:
-                            "url('https://i2-prod.mirror.co.uk/incoming/article22315296.ece/ALTERNATES/s615b/0_PlayStation-5-black-edition-concept.jpg')",
+                        `url('${props.url}')`,
                         transition: 'transform 0.3s', // Add transition property for smooth zoom effect
                         '&:hover': {
                             transform: 'scale(1.1)', // Zoom in by 10% on hover
@@ -96,6 +100,20 @@ export default function ProductCard1() {
             }}>
       <FavoriteIcon />
     </IconButton>
+    <IconButton sx={{
+                position: 'absolute',
+                paddingX: '5px',
+                paddingY: '5px',
+                backgroundColor:'white',
+                right:'10px',
+                top:'10px',
+                boxShadow: '0 4px 8px black',
+                '&:hover': {
+                    backgroundColor:'white',
+                },
+            }}>
+      <Looks />
+    </IconButton>
     <Box sx={{
                 position: 'absolute',
                 paddingX: '5px',
@@ -117,35 +135,46 @@ export default function ProductCard1() {
             }}>
            <img height={'15px'}  width={'15px'} src="https://static.vecteezy.com/system/resources/previews/018/842/764/original/3d-star-icon-isolated-on-background-customer-rating-feedback-concept-3d-rendering-free-png.png" alt="" srcset="" />
            <Box component="span">
-           < Typography sx={{ fontSize: '12px', fontWeight: 'semi-bold', color: 'black' }}>(5.0)</Typography>
+           < Typography sx={{ fontSize: '12px', fontWeight: 'semi-bold', color: 'black' }}>({props.rating})</Typography>
 </Box>
            
     </Box>
-    <Box sx={{
-                position: 'absolute',
-                paddingX: '10px',
-                paddingY: '4px',
-                backgroundColor:'white',
-                right:'10px',
-                top:'10px',
-                boxShadow: '0 4px 8px black',
-                // height:'20px',
-                // width:'70px',
-                display:'flex',
+  
+   <Box sx={{margin:"10px"}}>
+   <Typography sx={{ fontSize: '15px', fontWeight: 'bold', color: '#4C9BF7' }}>
+   {props.name}
+                            </Typography>
+                            
+                            <Typography sx={{ fontSize: '12px', fontWeight: 'normal', color: 'black'}}>
+                            {props.description}
+                            </Typography>
+                           <Box sx={{display:"flex",
                 alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 4px 8px black',
-                borderRadius:'10px',
-                '&:hover': {
-                    backgroundColor:'white',
-                },
-            }}>
-            <img height={'15px'}  width={'30px'} src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="" srcset="" />
-         
-           
-    </Box>
-   <Box sx={{}}>
-
+                justifyContent:'space-between',}}>
+                           <Box sx={{display:"flex",
+                alignItems: 'center',
+                justifyContent:'center',}}>
+                          
+                            <img height={'20px'}  width={'20px'} src="https://cdn3d.iconscout.com/3d/premium/thumb/dollar-symbol-6863354-5628240.png" alt="" srcset="" />
+                            <Typography sx={{ fontSize: '15px', fontWeight: 'bold', color: 'black' }}>
+                            {props.price}
+                            </Typography>
+                           </Box>
+                          
+                            <Button sx={{
+                                paddingX:'20px',
+                                paddingY:'0px',
+                                fontSize: '12px',
+                                fontWeight: 'bold',
+                                color: 'black',
+                                borderColor: 'black', // Set the border color here
+                                '&:hover': {
+                                    backgroundColor: 'black', // Set the hover color here
+                                    color: 'white',
+                                    borderColor: 'black',
+                                },
+                            }} variant="outlined">Add</Button>
+                           </Box>
    </Box>
             
         </Box>

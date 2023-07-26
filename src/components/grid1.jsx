@@ -19,10 +19,7 @@ export default function BasicGrid() {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={4}>
-                <Grid item xs={12}>
-                    <CatName categoryHeading="Featured" productHeading="New Arrival"/>
-                    
-                </Grid>
+               
                 <Grid item lg={1} md={1} xs={0}></Grid>
                 <Grid item lg={5} md={5} xs={12}>
                     <Box sx={{

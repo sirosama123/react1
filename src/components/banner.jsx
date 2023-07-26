@@ -5,7 +5,7 @@ import '/dealsorb/src/App.css'
 const ImageBanner = () => {
     return (
       <div style={{ height: "100px" }}>
-        <img src={banner} alt="Banner" height={'350px'} width={'100%'} />
+        <img src='https://img.freepik.com/premium-vector/facebook-cover-page-web-banner-design-template_130382-91.jpg' alt="Banner" height={'350px'} width={'100%'} />
       </div>
     );
   };
