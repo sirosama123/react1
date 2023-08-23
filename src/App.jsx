@@ -1,35 +1,67 @@
 import { useState } from 'react'
-
 import './App.css'
 import ResponsiveAppBar from './components/bar2'
-import Dropdown from './components/categories'
-import ImageBanner from './components/banner'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Product from './components/Product'
+import CategoryDesign2 from './components/Product'
 import { productData, responsive } from "./components/data";
 import { productData2, responsive2 } from "./components/trendyProductData";
+import { discountProdcts, discountProdctsResponsive } from "./components/productData2";
 import CatName from './components/catName'
 import BasicGrid from './components/grid1'
 import ProductCard1 from './components/widgets/productCard'
 import Box from '@mui/material/Box';
 import CouponGrid from "./components/couponGrid"
-import App22 from './components/picker1'
-import GlowingText from './components/txt1'
 import CouponProviders from './components/couponProviders'
 import ControlledCarousel from './components/carousel1'
+import { Link, Element } from 'react-scroll';
+import Heading1 from './components/subComponents/heading1';
+import Banner1 from './components/banner1';
+import Grid from '@mui/material/Grid';
+import ClearanceList from './components/clearanceScen';
+import Button from '@mui/material/Button';
+import Typography from "@mui/material/Typography";
+import DiscountCard1 from "./components/discountCard"
+import Benefits from './components/benefits'
+import Footer from './components/footer'
+import ImageSwitcher from '/dealsorb/src/pages/productDetails'
+import { Provider } from 'react-redux';
+import store from './stateManagement/store';
+import Tabs from './pages/productDetailsComponents/slider'
+
+
+
 
 
 function App() {
   const [count, setCount] = useState(0)
   const product = productData.map((item) => (
-    <Product
+    <CategoryDesign2
       name={item.name}
       url={item.imageurl}
       price={item.price}
       description={item.description}
     />
   ));
+  const colorList = ['#FF5733', '#33FFA6', '#3366FF', '#FF33E9'];
+  const variations = ['xs', 'sm', 'md', 'lg', 'xl'];
+  const images = [
+    "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
+    "https://dealsorb.com/wp-content/uploads/2022/03/Graco-TurboBooster-Highback-Booster-Seat.png",
+    "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
+    "https://dealsorb.com/wp-content/uploads/2022/03/Fire-TV-Stick-Lite-with-latest-Alexa-Voice-Remote-Lite-no-TV-controls-HD-streaming-device.png",
+    "https://images.unsplash.com/photo-1557245526-45dc0f1a8745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://dealsorb.com/wp-content/uploads/2022/03/Graco-TurboBooster-Highback-Booster-Seat.png",
+    "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
+    "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "https://dealsorb.com/wp-content/uploads/2022/03/Graco-TurboBooster-Highback-Booster-Seat.png",
+    "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
+    "https://dealsorb.com/wp-content/uploads/2022/03/Fire-TV-Stick-Lite-with-latest-Alexa-Voice-Remote-Lite-no-TV-controls-HD-streaming-device.png",
+    "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "https://dealsorb.com/wp-content/uploads/2022/03/Graco-TurboBooster-Highback-Booster-Seat.png",
+    "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
+  ];
+  const initialBigImageSrc = images[0];
   const product22 = productData2.map((item) => (
     <ProductCard1
       name={item.name}
@@ -40,22 +72,34 @@ function App() {
       brandLogo={item.brandLogo}
     />
   ));
+  const product23 = discountProdcts.map((item) => (
+    <DiscountCard1
+      name={item.name}
+      url={item.imageurl}
+      // price={item.price}
+      // description={item.description}
+      rating={item.rating}
+      discount={item.discount}
+    />
+  ));
 
   return (
     <Box >
       <ResponsiveAppBar/>
-      {/* <div style={{height:'10px'}}></div>
-      <Dropdown /> */}
-      <ControlledCarousel/>
-      <div style={{height:'300px'}}></div>
+      {/* <ControlledCarousel/> */}
+
+<div style={{height:'30px'}}></div>
+
+          
+         
       <Box sx={{marginX:'30px'}}>
-      <CatName categoryHeading="Categories" productHeading="Popular Categories"/>
+      {/* <CatName categoryHeading="Categories" productHeading="Popular Categories"/>
       <div style={{height:'30px'}}></div>
       <Carousel  responsive={responsive}>
         {product}
       </Carousel>
       <div style={{height:'60px'}}></div>
-      <CatName categoryHeading="Featured" productHeading="New Arrival"/>
+      <CatName categoryHeading="Featured" productHeading="New Arrivals"/>
       <div style={{height:'30px'}}></div>
       <BasicGrid/>
       <div style={{height:'60px'}}></div>
@@ -64,17 +108,61 @@ function App() {
       <Carousel  responsive={responsive2}>
         {product22}
       </Carousel>
-      <div style={{height:'40px'}}></div>
-      <CouponGrid/>
-      <div style={{height:'40px'}}></div>
+      <div style={{height:'60px'}}></div>
+      <CatName categoryHeading="Our Products" productHeading="Deals & Coupons"/>
+      <div style={{height:'30px'}}></div>
       <CouponProviders/>
       <div style={{height:'40px'}}></div>
-     
+      <Banner1/>
+      <div style={{height:'60px'}}></div>
+      <Box sx={{display:'flex',alignItems:'',justifyContent:'space-between'}}>
+       <CatName categoryHeading="This Month" productHeading="Clearance Sale"/>
+       <Button sx={{height:'40px',backgroundColor:'#DB4444',paddingX:'50px'}}>
+        <Box sx={{color:'white',fontWeight:'bold'}}>
+         See All
+        </Box>
+        </Button>
       </Box>
+      <div style={{height:'30px'}}></div>
+      <ClearanceList/>
+      <div style={{height:'60px'}}></div>
+      <CatName categoryHeading="Today's" productHeading="Summer Discount"/>
+      <div style={{height:'30px'}}></div>
+      <Carousel  responsive={discountProdctsResponsive}>
+        {product23}
+      </Carousel>
+      <div style={{height:'120px'}}></div>
+      <Grid container >
+        <Grid item lg={1}>
+          
+        </Grid>
+        <Grid item lg={10}>
+          <Benefits/>
+        </Grid>
+        <Grid item lg={1}>
+          
+        </Grid>
+      </Grid>  */}
+     
+
+
+     <div style={{height:'30px'}}></div>
+      <Provider store={store}>
+      <div className="App">
+        <ImageSwitcher variations={variations} images={images} initialBigImageSrc={initialBigImageSrc} colorList={colorList} />
+      </div>
+    </Provider>
+    <div style={{height:'60px'}}></div>
+    <CatName categoryHeading="Today's" productHeading="Related Products"/>
+      <div style={{height:'30px'}}></div>
+      <Tabs/>
+
+      </Box>
+    
+      <Footer/>
     </Box>
   )
 }
-
 export default App
 
 

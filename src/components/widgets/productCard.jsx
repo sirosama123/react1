@@ -18,8 +18,10 @@ export default function ProductCard1(props) {
                 borderRadius: '5px',
                 backgroundColor: '#F5F5F5',
                 position: 'relative',
-                boxShadow: '0 4px 8px black',
-                marginY:"20px"
+                // boxShadow: '0 4px 8px black',
+                marginY:"20px",
+                boxShadow: "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"
+                
             }}
         >  
             <Box
@@ -93,7 +95,7 @@ export default function ProductCard1(props) {
                 backgroundColor:'white',
                 right:'20px',
                 bottom:'22%',
-                boxShadow: '0 4px 8px black',
+                boxShadow: 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',
                 '&:hover': {
                     backgroundColor:'white',
                 },
@@ -107,7 +109,7 @@ export default function ProductCard1(props) {
                 backgroundColor:'white',
                 right:'10px',
                 top:'10px',
-                boxShadow: '0 4px 8px black',
+                boxShadow: 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',
                 '&:hover': {
                     backgroundColor:'white',
                 },
@@ -127,7 +129,7 @@ export default function ProductCard1(props) {
                 display:'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 4px 8px black',
+                boxShadow: 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',
                 borderRadius:'10px',
                 '&:hover': {
                     backgroundColor:'white',

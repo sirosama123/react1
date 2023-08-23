@@ -1,4 +1,4 @@
-export const productData2 = [
+export const discountProdcts = [
     {
       id: 1,
       imageurl:
@@ -6,8 +6,8 @@ export const productData2 = [
       name: "Furhaven Orthopedic",
       price: "19.99",
       description: "Some text about the product..",
-      rating:"5.0",
-      brandLogo:"https://upload.wikimedia.org/wikipedia/commons/2/24/Adidas_logo.png"
+      rating:5,
+      discount:"10"
     },
     {
       id: 2,
@@ -16,8 +16,8 @@ export const productData2 = [
       name: "WATER BOTTLES",
       price: "21.99",
       description: "Some text about the product..",
-      rating:"5.0",
-      brandLogo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+      rating:4,
+      discount:"30"
     },
     {
       id: 3,
@@ -26,18 +26,18 @@ export const productData2 = [
       name: "KITCHEN ACCESSORIES",
       price: "99.99",
       description: "Some text about the product..",
-      rating:"5.0",
-      brandLogo:"https://companieslogo.com/img/orig/600690.SS_BIG-07f22d57.png?t=1664511268"
+      rating:5,
+      discount:"30"
     },
     {
       id: 4,
       imageurl:
         "https://dealsorb.com/wp-content/uploads/2022/02/awesome-t-shirt-designs-41b.jpg",
       name: "HOME IMPROVEMENT",
-      price: "14.99",
+      price: 5,
       description: "Some text about the product..",
       rating:"5.0",
-      brandLogo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+      discount:"50"
     },
     {
       id: 5,
@@ -46,8 +46,8 @@ export const productData2 = [
       name: "MOBILE ACCESSORIES",
       price: "38.99",
       description: "Some text about the product..",
-      rating:"5.0",
-      brandLogo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+      rating:3,
+      discount:"50"
     },
     {
       id: 6,
@@ -56,8 +56,8 @@ export const productData2 = [
       name: "ORGANIZERS",
       price: "149.99",
       description: "Some text about the product..",
-      rating:"5.0",
-      brandLogo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+      rating:5,
+      discount:"10"
     },
     {
       id: 7,
@@ -66,8 +66,8 @@ export const productData2 = [
       name: "Sunglasses",
       price: "38.99",
       description: "Some text about the product..",
-      rating:"5.0",
-      brandLogo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+      rating:3,
+      discount:"15"
     },
     {
       id: 8,
@@ -76,12 +76,12 @@ export const productData2 = [
       name: "Dove cream",
       price: "49.99",
       description: "Some text about the product..",
-      rating:"5.0",
-      brandLogo:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+      rating:5,
+      discount:"30"
     },
   ];
   
-  export const responsive2 = {
+  export const discountProdctsResponsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 1024 },
@@ -94,7 +94,7 @@ export const productData2 = [
     },
     tablet: {
       breakpoint: { max: 800, min: 464 },
-      items: 1,
+      items: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },

@@ -45,7 +45,7 @@ function ResponsiveAppBar() {
     <Typography textAlign="center" sx={{color:"white",fontSize:{xs: 0,md:10,lg:15}}}>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</Typography>
     <Typography  textAlign="center" sx={{color:"white",fontSize:{xs: 0,md:10,lg:15}}}>Shop Now</Typography>
     </Box>
-     <AppBar position="static" color="">
+     <AppBar position="sticky" color="">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           

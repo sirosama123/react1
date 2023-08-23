@@ -98,7 +98,7 @@ export default function CouponCard(props){
        <Box sx={{
         height:"30px",
         width:"30px",
-        backgroundColor: '#1A9BF7',
+        backgroundColor: '#F5F5F5',
         borderRadius:"100%",
         position:'absolute',
         left:"-15px",
@@ -110,7 +110,7 @@ export default function CouponCard(props){
        <Box sx={{
         height:"30px",
         width:"30px",
-        backgroundColor: '#1A9BF7',
+        backgroundColor: '#F5F5F5',
         borderRadius:"100%",
         position:'absolute',
         right:"-15px",
@@ -121,19 +121,19 @@ export default function CouponCard(props){
         right:"2%",
         top:"2%"
        }}>
-           <Button sx={{
-                                paddingX:'20px',
-                                paddingY:'0px',
-                                fontSize: '12px',
-                                fontWeight: 'bold',
-                                color: 'black',
-                                borderColor: 'black', // Set the border color here
-                                '&:hover': {
-                                    backgroundColor: 'black', // Set the hover color here
-                                    color: 'white',
-                                    borderColor: 'black',
-                                },
-                            }} variant="outlined">Get</Button>
+      <Button sx={{
+        paddingX:'20px',
+        paddingY:'0px',
+        fontSize: '12px',
+        fontWeight: 'bold',
+        color: 'black',
+        borderColor: 'black', // Set the border color here
+        '&:hover': {
+            backgroundColor: 'black', // Set the hover color here
+            color: 'white',
+            borderColor: 'black',
+        },
+    }} variant="outlined">Get</Button>
        </Box>
       </Card>
 

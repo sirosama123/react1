@@ -67,3 +67,71 @@
 .a {
   grid-area: 4 ;
 }
+
+#headphoneImg{
+  height: 400px;
+  width: 400px;
+  display: block;
+}
+
+@media screen and (max-width: 900px) {
+  #headphoneImg{
+    display: none;
+  }
+}
+
+
+
+@media screen and (max-width: 1180px) {
+  .animatedTextSlider{
+    font-size: 70px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .animatedTextSlider{
+    font-size: 70px !important;
+  }
+}
+@media screen and (max-width: 1030px) {
+  .animatedTextSlider{
+    font-size: 60px !important;
+  }
+}
+@media screen and (max-width: 883px) {
+  .animatedTextSlider{
+    font-size: 50px !important;
+  }
+}
+@media screen and (max-width: 736px) {
+  .animatedTextSlider{
+    font-size: 35px !important;
+  }
+}
+@media screen and (max-width: 520px) {
+  .animatedTextSlider{
+    font-size: 25px !important;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 900px) {
+  .carouselImg{
+    height:400px;
+    width:100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .carouselImg{
+    height:300px;
+    width:100%;
+  }
+}
+@media screen and (max-width: 300px) {
+  .carouselImg{
+    height:250px;
+    width:100%;
+  }
+}

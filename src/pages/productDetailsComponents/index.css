@@ -1,0 +1,257 @@
+.color-selector {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .color-box {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border 0.3s;
+  }
+
+  .color-box-main {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border 0.3s;
+  }
+  
+  .selected {
+    border: 2px solid black;
+    
+  }
+
+  .variation-selector {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .variation-button {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .variation-button.selected {
+    background-color: #DB4444;
+    color: white;
+  }
+  
+
+ 
+  .webViewSlider{
+    display: flex;
+  }
+
+  .App {
+    font-family: sans-serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
+
+
+  
+  .images-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 440px;
+    
+    overflow: hidden;
+    scroll-behavior: none;
+    scroll-behavior: smooth;
+    transition: scroll 0.3s ease-in-out;
+  }
+  
+  .image {
+    display: block;
+    object-fit:fill;
+    height: 120px; 
+    width: 120px;
+    margin: auto;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    
+  }
+  
+  .nav-btn {
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background-color: #c3c3c3;
+    border-radius: 6px;
+    height: 30px;
+    width: 100px;
+    /* margin: 5px; */
+  }
+  images-container::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+
+
+
+.mobileViewSlider{
+  font-family: sans-serif;
+  align-items: center;
+  display: none;
+  justify-content: center;
+  flex-direction: row;
+}
+.nav-btnMobileView{
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  background-color: #c3c3c3;
+  border-radius: 6px;
+  height: 100px;
+  width: 30px;
+}
+.images-containerMobileView{
+  display: flex;
+  flex-direction: row;
+  max-width:900px;
+  overflow: hidden;
+  scroll-behavior: none;
+  scroll-behavior: smooth;
+  transition: scroll 0.3s ease-in-out;
+}
+
+
+
+
+
+
+/* @media screen and (max-width: 1200px) {
+  .mobileViewSlider{
+    display: flex;
+  }
+  .images-container{
+    display: none;
+  }
+  .nav-btn{
+    display: none;
+  }
+  
+} */
+#bigImage{
+  display: block;
+  object-fit:fill;
+  height: 500px; 
+  width: 90%;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .mobileViewSlider{
+    display: flex;
+  }
+  .images-container{
+    display: none;
+  }
+  .nav-btn{
+    display: none;
+  }
+  .images-containerMobileView{
+    max-width:400px;
+  }
+  
+}
+@media screen and (max-width: 500px) {
+  .images-containerMobileView{
+    max-width:350px;
+  }
+  
+}
+@media screen and (max-width: 400px) {
+  #bigImage{
+    height: 350px;
+    width: 100%;
+  }
+  .images-containerMobileView{
+    max-width:250px;
+  }
+  
+}
+
+
+.swiper {
+  margin: 100px auto;
+  width: 320px;
+  height: 240px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-slide:nth-child(1n) {
+  background-color: rgb(206, 17, 17);
+}
+
+.swiper-slide:nth-child(2n) {
+  background-color: rgb(0, 140, 255);
+}
+
+.swiper-slide:nth-child(3n) {
+  background-color: rgb(10, 184, 111);
+}
+
+.swiper-slide:nth-child(4n) {
+  background-color: rgb(211, 122, 7);
+}
+
+.swiper-slide:nth-child(5n) {
+  background-color: rgb(118, 163, 12);
+}
+
+.swiper-slide:nth-child(6n) {
+  background-color: rgb(180, 10, 47);
+}
+
+.swiper-slide:nth-child(7n) {
+  background-color: rgb(35, 99, 19);
+}
+
+.swiper-slide:nth-child(8n) {
+  background-color: rgb(0, 68, 255);
+}
+
+.swiper-slide:nth-child(9n) {
+  background-color: rgb(218, 12, 218);
+}
+
+.swiper-slide:nth-child(10n) {
+  background-color: rgb(54, 94, 77);
+}
+

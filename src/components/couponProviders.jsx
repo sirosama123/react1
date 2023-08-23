@@ -4,46 +4,32 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import App22 from './picker1'
 import { TypeAnimation } from 'react-type-animation';
-
+import AnimatedText from './quote2'
+import SubCarousel from './subCarousel'
 
 export default function CouponProviders(){
     return (
-        <Box sx={{padding:'40px',backgroundColor:"#1A9BF7",borderRadius:'20px',boxShadow: '10px 10px 25px 5px grey',}}>
+        <Box sx={{padding:'40px',backgroundColor:"#F5F5F5",borderRadius:'10px',boxShadow: 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',}}>
            <Grid container spacing={2} justifyContent="center" >
            <Grid lg={4}>
              <Box sx={{
-                paddingTop:'20px',
+               //  paddingTop:'20px',
                 display:'flex',
                 flexDirection:'column',
                 alignItems:'center',
                 justifyContent:'start',
                 backgroundColor:"#1A9BF7",
-                height:'100%'
+                height:'100%',
+                borderRadius:'50%'
              }}>
                 <Grid>
                     <Grid lg={12}>
-                        <Box sx={{width:'100%'}}>
-                        <h1>COUPONS PROVIDERS</h1>
+                        <Box sx={{}}>
+                           <SubCarousel/>
                         </Box>
                     </Grid>
                     <Grid lg={12}>
-                    <TypeAnimation
-      sequence={[
-        `UBER\nCAREEM\nBATA\nKFC\nMcDonald's`, // actual line-break inside string literal also gets animated in new line, but ensure there are no leading spaces
-        2000,
-        '',
-      ]}
- 
-      
-      style={{ 
-         fontSize: '40px',
-      color: 'black',
-      textAlign: 'start',
-
-    
-     whiteSpace: 'pre-line', height: '15px', display: 'block' }}
-      repeat={Infinity}
-    />
+                     
                     </Grid>
                 </Grid>
              </Box>

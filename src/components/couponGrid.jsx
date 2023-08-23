@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid'; // Step 1: Import Grid component
 import CouponCard from './coupon1'
+import AnimatedText from './quote2'
 
 
 

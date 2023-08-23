@@ -6,6 +6,8 @@ import Grid from '@mui/material/Grid';
 import Typography from "@mui/material/Typography";
 import Button from '@mui/material/Button';
 import CatName from './catName'
+import 'aos/dist/aos.css'; // Import the AOS styles
+import AOS from 'aos'; // Import the AOS library
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -16,12 +18,15 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function BasicGrid() {
+    React.useEffect(() => {
+        AOS.init();
+      }, []);
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={4}>
                
                 <Grid item lg={1} md={1} xs={0}></Grid>
-                <Grid item lg={5} md={5} xs={12}>
+                <Grid  data-aos="fade-right" item lg={5} md={5} xs={12}>
                     <Box sx={{
                         position: 'relative',
                         backgroundSize: 'cover',
@@ -67,7 +72,7 @@ export default function BasicGrid() {
                     </Box>
                 </Grid>
 
-                <Grid item lg={5} md={5} xs={12}>
+                <Grid  data-aos="fade-left" item lg={5} md={5} xs={12}>
 
                     <Grid container spacing={4}>
 
@@ -115,7 +120,7 @@ export default function BasicGrid() {
                         </Box>
                             </Box>
                         </Grid>
-                        <Grid item lg={6} md={6} xs={12}>
+                        <Grid item lg={6} md={6} xs={12} >
                             <Box sx={{
                                 position: 'relative',
                                 backgroundSize: 'cover',

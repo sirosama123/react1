@@ -6,7 +6,7 @@ import { couponeData1 } from './couponGrid'; // Import the coupon data array
 
 
 
-const App22 = () => {
+const App222 = () => {
   const [dotPosition, setDotPosition] = useState(undefined);
 
   const handlePositionChange = (e) => {
@@ -14,12 +14,11 @@ const App22 = () => {
   };
 
   return (
-    <Box sx={{padding:"10px",backgroundColor:"#F5F5F5"}}>
+    <Box >
       <Carousel autoplay={true} dotPosition={"left"} dots={false}>
         {couponeData1.map((coupon) => (
           <Box key={coupon.id} sx={{
           ml:"50px",
-          padding:'10px'
           }}>
             <CouponCard
               brandImg={coupon.brandImg}
@@ -34,4 +33,4 @@ const App22 = () => {
   );
 };
 
-export default App22;
+export default App222;
