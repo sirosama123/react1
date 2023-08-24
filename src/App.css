@@ -1,9 +1,6 @@
-
-
-/* h1 {
-  margin: 1rem auto 4rem;
-} */
-
+body{
+  background-color: #ECECEC !important;
+}
 .product--image {
   width: 100%;
   height: 10em;
@@ -134,4 +131,43 @@
     height:250px;
     width:100%;
   }
+}
+
+
+
+
+
+.couponPageContent{
+  background-color: white;
+  padding: 20px;
+  text-align: justify;
+  color: #1F1F1F;
+}
+
+.couponPageContent p{
+  font-weight: 400;
+  font-size: 14px;
+  color: #1F1F1F;
+}
+.couponPageContent h1{
+  font-weight: 500;
+  font-size: 21px;
+  color: #1F1F1F;
+}
+
+.couponPageContent h2{
+  font-weight: 600;
+  font-size: 18px;
+  color: #1F1F1F;
+}
+.couponPageContent h4{
+  font-weight: 500;
+  font-size: 14px;
+  color: #374165;
+  text-decoration: underline dotted #374165;    
+}
+.couponPageContent h6{
+  font-weight: 400;
+  font-size: 14px;
+  color: #1F1F1F;
 }

@@ -1,0 +1,157 @@
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    height: 250px;
+    
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width:250px;
+  }
+  #app { height: 50% }
+
+  
+
+  .couponBgImg{
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/banner1.jpg?alt=media&token=e3b1b3ba-799b-4c46-88c5-27d037ffcb68');
+    background-size: cover; /* Adjusts the image size to cover the container */
+    background-repeat: no-repeat;
+    background-position: center center; /* Centers the image */
+    height: 400px; /* Set the specific height you want */
+  }
+  .couponBanner{
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/couponeDealBanner.jpg?alt=media&token=6cb210f3-8d26-4ead-8aa5-b1cde781a6df');
+    background-size: cover; /* Adjusts the image size to cover the container */
+    background-repeat: no-repeat;
+    background-position: center center; /* Centers the image */
+    height: 100px; /* Set the specific height you want */
+    width: 80%;
+  }
+  
+  .mainCardCoupon{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  }
+  .couponCard{
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    align-items: center;
+   
+    /* box-shadow: rgba(54, 69, 79, 0.2) 0px 7px 29px 0px; */
+  }
+  .right{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #ECECEC;
+    position: absolute;
+    right: -7px;
+    bottom: 40px;
+  }
+
+  .left{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #ECECEC;
+    position: absolute;
+    left: -7px;
+    bottom: 40px;
+  }
+  .dashedLine {
+    border: none;
+    border-top: 2px dotted #1F1F1F;
+    color: #fff;
+    height: 1px;
+    width: 88%;
+    position: absolute;
+  
+    bottom: 45px;
+  }
+  .brandLogo{
+    margin-top: 20px;
+  }
+  .brandLogo img{
+    height: 50px;
+    width: 50px;
+  }
+  .off{
+    color: #1F1F1F;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .number{
+    height: 30px;
+    width: 60%;
+    background-color:#F5F5F5 ;
+    position: absolute;
+    bottom: 8px;
+    
+  
+  }
+  
+  .subNumber{
+    height: 30px;
+    width: 100%;
+    background-color: grey;
+    border: none;
+    border: 1px dotted #1F1F1F;
+    position: relative;
+    bottom: px;
+    transition: width 2s ease-in-out;
+    z-index: 100;
+  }
+  .mainNumber{
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    bottom: 10px;
+  }
+  
+  .subNumber:hover{
+    width: 60%;
+  }
+
+  .mainShopCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shopCard{
+    height: 162px;
+    width: 147px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 5px;
+    align-items: center;
+  }
+  .offer{
+    font-size: 11px;
+    font-weight: 500;
+    color: #BB4545;
+  }
+  .shopLink{
+    font-size: 13px;
+    font-weight: 500;
+    color: black;
+    text-decoration: underline dotted black;    
+  }
