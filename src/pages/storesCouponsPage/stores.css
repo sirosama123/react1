@@ -1,0 +1,46 @@
+.banner{
+    height: 40vh;
+    width: 100%;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/007/808/308/non_2x/coupon-sale-banner-template-design-for-web-or-social-media-vector.jpg");
+    background-color: #cccccc;
+    background-size:cover;
+    background-repeat: no-repeat;
+    
+}
+
+.storeNameHeading{
+    font-size: 30px;
+    font-weight: 500;
+    color: black;
+    margin: 30px 0px 20px 10px;
+}
+
+.offer{
+    font-size: 25px;
+    font-weight: 400;
+    color: #DB4444;
+    /* margin: 30px 0px 20px 10px; */
+}
+
+.shopNow{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 0.5px solid grey;
+    width: 80%;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 0.5px solid grey;
+    width: 80%;
+}
+.boldHeadings{
+    font-size: 14px;
+    font-weight: 800;
+    color: #36454f;
+}

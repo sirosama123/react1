@@ -1,27 +1,76 @@
 
 .swiper {
     width: 100%;
-    padding-top: 50px;
-    margin-bottom: 50px;
+    /* height: 100%; */
+    /* padding-top: 50px;
+    margin-bottom: 50px; */
+    /* background-color: #BB4545; */
   }
   
   .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     
   }
   
   .swiper-slide img {
     display: block;
-    width:250px;
+    width:200px;
   }
   #app { height: 50% }
+
+
+
+
+
+
+  .mySwiper {
+    width: 100%;
+    /* height: 100%; */
+  }
+  
+  .swipeSlide2 {
+    height: 100% !important;
+    text-align: center;
+    font-size: 18px;
+    background: #fff !important;
+    
+    /* Center slide text vertically */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  .swipeSlide2 img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .abc{
+    height: 40% !important;
+  }
+  .ourSponsers{
+    font-size: 45px;
+  font-weight: 700;
+  background-image: linear-gradient(to left, #025691, #1A9BF7);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  }
+
+
+
+
 
   
 
   .couponBgImg{
+    /* display: flex; */
     background-image: url('https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/banner1.jpg?alt=media&token=e3b1b3ba-799b-4c46-88c5-27d037ffcb68');
     background-size: cover; /* Adjusts the image size to cover the container */
     background-repeat: no-repeat;
@@ -155,3 +204,33 @@
     color: black;
     text-decoration: underline dotted black;    
   }
+
+
+
+
+
+
+
+
+
+
+  .swiper3 {
+    width: 100%;
+    height: 100% !important;
+  }
+  
+  .swiper-slide3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    height: 100%;
+  }
+  .swiper-slide3 img{
+    height: 350px;
+    width: 90%;
+  }
+  
+  

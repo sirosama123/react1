@@ -27,10 +27,14 @@ import Footer from './components/footer'
 import ImageSwitcher from '/dealsorb/src/pages/productDetails'
 import { Provider } from 'react-redux';
 import store from './stateManagement/store';
-import Tabs from './pages/couponsPage/ladingPage'
+import Tabs from './pages/couponsPage/components/ladingPage'
 import CouponCardDeal from './pages/couponsPage/components/dealCards'
 import ProviderShops from './pages/couponsPage/components/providersShop'
-
+import SliderCouponMain from './pages/couponsPage/components/mainSliderCouponPage'
+import Option2 from './pages/couponsPage/components/storeSliderOption'
+import MainCouponLandingPage from './pages/couponsPage/mainCouponsLandingPage'
+import ShowableProductDetails from './pages/productDetailPage/showableProductDetails'
+import MainStorePage from './pages/storesCouponsPage/mainStorePage'
 
 
 
@@ -73,6 +77,14 @@ function App() {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtOvTAMvoMWZejLewsVKr0arfX9Ama-q6hbOHIZ_QBXQ87sm0UfuCL70ejShVVsF97Iyg&usqp=CAU"
 
   ]
+  const saleBanners = [
+    "https://img.freepik.com/free-vector/flat-sale-banner-with-photo_23-2149026968.jpg?w=1380&t=st=1693021570~exp=1693022170~hmac=15fbcfcb5cb810fb70e00bdcb5faadb7bf07ab815b91ac15f536909abcf07b99",
+    "https://img.freepik.com/free-psd/fashion-super-sale-banner-template_23-2148997357.jpg?w=1380&t=st=1693021635~exp=1693022235~hmac=011a6d80eeccfeafe9525e04ad002fe111e36364381c745da72a1ec4df1575aa",
+    "https://img.freepik.com/free-vector/modern-super-sale-promotion-bright-banner_1055-6985.jpg?w=1380&t=st=1693021706~exp=1693022306~hmac=245ac710be90bd05b9c0bca7c38c8a1ae1e78bfb98f47877363c44881c143c4e",
+    "https://img.freepik.com/free-photo/arrangement-black-friday-clock-with-copy-space_23-2148665530.jpg?w=1380&t=st=1693021730~exp=1693022330~hmac=d8be7fe228a02f04ee3b7e082122e96e514e8d14c23b0b0369e6ff4a49477893",
+    "https://img.freepik.com/free-vector/modern-promotional-sales-banner-design_1017-9787.jpg?2&w=1060&t=st=1693021763~exp=1693022363~hmac=20877ff9e86694692b1a4cc1b4cbe090f39f0041c25851f1e5e4c5de2bb3417c",
+    "https://img.freepik.com/free-vector/deal-promotional-banner-hanging-price-tag-style_1017-27325.jpg?w=1060&t=st=1693021786~exp=1693022386~hmac=6a40ee3173925f9e3de54fe29d2f3d5cf378c5b928c4b20bbda0ec86f72493f8"
+  ]
   const initialBigImageSrc = images[0];
   const product22 = productData2.map((item) => (
     <ProductCard1
@@ -97,143 +109,10 @@ function App() {
    
   return (
     <Box >
-      <ResponsiveAppBar/>
-      {/* <ControlledCarousel/> */}
-      <div className='couponBgImg'>
-      <Tabs images={brands} />
-      </div>
-      <div style={{height:'30px'}}></div>
-      <div className='couponBanner'>
-     
-      </div>
-      <div style={{height:'30px'}}></div>
-      <CouponCardDeal/>
-      <div style={{height:'30px'}}></div>
-      <Grid container>
-        <Grid item lg={1}>
-
-        </Grid>
-        <Grid item lg={10}>
-          <div className='couponPageContent'>
-              <h1>
-              Coupons and Discount Codes in UAE
-              </h1>
-              <p>
-              Al Coupon is the best renowned Arab coupons’ website, collecting hundreds of coupon codes and voucher coupons, in addition to offers and discounts valid for 2023. The website also assists you in learning how to use and apply coupons or promo codes, to save money while shopping online through any e-commerce website. All in just one place!
-              </p>
-              <p>
-              Our goal at Al Coupon is to help you find the newest and latest coupon codes, promotional vouchers and discount codes, valid and tested for hundreds of local and international online stores that ship to Abu Dhabi, Dubai,Sharjah, Al Ain, Ras al Khaimah...etc. Our team is working hard to check and update every coupon on a daily basis to help you save more on your purchases from your favorite shopping sites.
-              </p>
-          </div>
-        </Grid>
-        <Grid item lg={1}>
-
-        </Grid>
-      </Grid>
-      <div style={{height:'30px'}}></div>
-      <ProviderShops/>
-      <div style={{height:'30px'}}></div>
-      <Grid container>
-        <Grid item lg={1}>
-
-        </Grid>
-        <Grid item lg={10}>
-          <div className='couponPageContent'>
-              <h1>
-              Oman Discounts, Coupons & Promo Codes July 2023
-              </h1>
-              <Grid container>
-                <Grid item lg={3}>
-                   <div>
-                    <h2>
-                        Online Store
-                    </h2>
-                    <h4>
-                    FirstCry 
-                    </h4>
-                    <h4>
-                    Farfetch  
-                    </h4>
-                    <h4>
-                    Namshi 
-                    </h4>
-                    <h4>
-                    Ounass 
-                    </h4>
-                    <h4>
-                    iHerb  
-                    </h4>
-                    <h4>
-                    6th Street 
-                    </h4>
-                    <h4>
-                    Level Shoes
-                    </h4>
-                   </div>
-                </Grid>
-                <Grid item lg={3}>
-                   <div>
-                    <h2>
-                        Coupone Code
-                    </h2>
-                    <h6>
-                    CX122  
-                    </h6>
-                    <h6>
-                    RXKJ2Q  
-                    </h6>
-                    <h6>
-                    ALC1 
-                    </h6>
-                    <h6>
-                    H13 
-                    </h6>
-                    <h6>
-                    IMA1115  
-                    </h6>
-                    <h6>
-                    CX1 
-                    </h6>
-                    <h6>
-                    LA9
-                    </h6>
-                   </div>
-                </Grid>
-                <Grid item lg={6}>
-                   <div>
-                    <h2>
-                        Discount Details
-                    </h2>
-                    <h4>
-                    FirstCry coupon code | 10% OFF Sitewide
-                    </h4>
-                    <h4>
-                    New Users Farfetch promo code | 10% OFF
-                    </h4>
-                    <h4>
-                    Namshi promo code | 5% Discounted Items  
-                    </h4>
-                    <h4>
-                    10% Ounass Discount Code + Sale up to 50% 
-                    </h4>
-                    <h4>
-                    Iherb Offers | Up to 20% OFF  
-                    </h4>
-                    <h4>
-                    6th Street 
-                    </h4>
-                    <h4>
-                    Level Shoes
-                    </h4>
-                   </div>
-                </Grid>
-              </Grid>
-          </div>
-        </Grid>
-        <Grid item lg={1}>
-
-        </Grid>
-      </Grid>
+      {/* <ResponsiveAppBar/>
+<ControlledCarousel/> */}
+      {/* <MainCouponLandingPage/> */}
+      <MainStorePage/>
       <Box sx={{marginX:'30px'}}>
       {/* <CatName categoryHeading="Categories" productHeading="Popular Categories"/>
       <div style={{height:'30px'}}></div>
@@ -288,21 +167,13 @@ function App() {
      
 
 
-     {/* <div style={{height:'30px'}}></div>
-      <Provider store={store}>
-      <div className="App">
-        <ImageSwitcher variations={variations} images={images} initialBigImageSrc={initialBigImageSrc} colorList={colorList} />
-      </div>
-    </Provider>
-    <div style={{height:'60px'}}></div>
-    <CatName categoryHeading="Today's" productHeading="Related Products"/> */}
-      <div style={{height:'30px'}}></div>
-
+   
+{/* <ShowableProductDetails/> */}
      
     
       </Box>
-    
-      <Footer/>
+      
+      {/* <Footer/> */}
     </Box>
   )
 }

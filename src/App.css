@@ -156,7 +156,7 @@ body{
 }
 
 .couponPageContent h2{
-  font-weight: 600;
+  font-weight: 700 !important;
   font-size: 18px;
   color: #1F1F1F;
 }
@@ -170,4 +170,59 @@ body{
   font-weight: 400;
   font-size: 14px;
   color: #1F1F1F;
+}
+.imgSectionplusContent{
+  display: flex;
+  flex-direction: column;
+  height: 50vh
+}
+.imgContent{
+  width: 100%;
+  /* height: 100px; */
+  background-image: url("https://img.freepik.com/free-vector/flat-sale-banner-with-photo_23-2149026968.jpg?w=1380&t=st=1693021570~exp=1693022170~hmac=15fbcfcb5cb810fb70e00bdcb5faadb7bf07ab815b91ac15f536909abcf07b99");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  flex-grow: 50;
+  margin-bottom: 10px;
+}
+
+
+
+.lastInstructions{
+  height: 625px;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+
+.lastInstructionsImg1{
+  width: 340px;
+  height: 160px;
+  flex-shrink: 0;
+  margin: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/step-1-copy-coupon-code-v1%201.png?alt=media&token=af5ec3bd-daec-4e88-9376-bceeafceddd1");
+}
+.lastInstructionsImg2{
+  margin: 20px;
+  width: 340px;
+  height: 160px;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/step-2-apply-coupon-code-v1%201.png?alt=media&token=f381044d-7550-48d9-9ca6-a4dc4a2808e2");
+}
+.lastInstructionsImg3{
+  margin: 20px;
+  width: 340px;
+  height: 160px;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/step-1-copy-coupon-code-v1%201.png?alt=media&token=af5ec3bd-daec-4e88-9376-bceeafceddd1");
 }
