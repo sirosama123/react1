@@ -13,6 +13,12 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import CouponDescriptionStores from './components/couponDescriptions'
 import MajorDiscountOffer from './components/majorDiscountOffer'
+import PopularPromoCodes from './components/popularPromoCodes'
+import ReviewsArticles from './components/reviewsArtcles'
+import TopUsersComments from './components/topUserComments'
+import CustomerRatings from './components/CustomerRatings'
+import FAQS  from './components/faqs';
+import SimilarStores from './components/similarStores';
 
 const couponsData = [
     {
@@ -122,7 +128,6 @@ const couponData = [
       {
         offer:"5% Cashback (Up to 25 AED)",
         title: "5% OFF Noon coupon code 2023 for returning users | Up to 25 AED Cashback",
-        description: 'Enjoy discounts of 10% OFF up to a maximum cashback of 50 Dirham for new users, and 5% cashback up to a maximum of 10 Dirham for recurrent Noon UAE users.Noon discount code valid for purchases via the website or mobile app.This promo code is valid on all the following categories: Electronics, Mobiles and Tablets, Baby products, toys, perfumes, clothes and fashion...Terms and conditions apply',
         code:'ALCNOON'
       },
     // Add more coupon objects as needed
@@ -138,9 +143,11 @@ export default function MainStorePage() {
                 <Grid container>
                     <Grid lg={8}>
                         <div>
+                        <div style={{ height: '15px' }}></div>
                             <div className="storeNameHeading">
                                 Noon UAE store's Coupons and Promo Codes
                             </div>
+                            <div style={{ height: '15px' }}></div>
                             <div>
                             {couponData.map((coupon, index) => (
                                 <>
@@ -155,7 +162,29 @@ export default function MainStorePage() {
                                 </>
                             ))}
                             </div>
+                            <div style={{ height: '30px' }}></div>
                             <MajorDiscountOffer/>
+                            <div style={{ height: '30px' }}></div>
+                            <PopularPromoCodes/>
+                            <div style={{ height: '30px' }}></div>
+                            <ReviewsArticles/>
+                            <div style={{ height: '30px' }}></div>
+                            <TopUsersComments/>
+                            <div style={{ height: '30px' }}></div>
+                            <CustomerRatings/>
+                            <div style={{ height: '30px' }}></div>
+                            <div className="couponMainHeadingOffer">
+                            FAQ about Noon coupon, sale and discounts
+                            </div>
+                            <div style={{ height: '15px' }}></div>
+                            <FAQS/>
+                            <div style={{ height: '30px' }}></div>
+                            <div className="couponMainHeadingOffer">
+                            Similar Stores to Noon in UAE
+                            </div>
+                            <div style={{ height: '15px' }}></div>
+                            <SimilarStores/>
+
                         </div>
                     </Grid>
                     <Grid lg={4} sx={{}}>

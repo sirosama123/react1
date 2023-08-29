@@ -109,8 +109,8 @@ function App() {
    
   return (
     <Box >
-      {/* <ResponsiveAppBar/>
-<ControlledCarousel/> */}
+     <ResponsiveAppBar/>
+ {/* <ControlledCarousel/> */}
       {/* <MainCouponLandingPage/> */}
       <MainStorePage/>
       <Box sx={{marginX:'30px'}}>
@@ -172,8 +172,8 @@ function App() {
      
     
       </Box>
-      
-      {/* <Footer/> */}
+      <div style={{height:'30px'}}></div>
+      <Footer/>
     </Box>
   )
 }
