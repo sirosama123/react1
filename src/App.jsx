@@ -35,6 +35,8 @@ import Option2 from './pages/couponsPage/components/storeSliderOption'
 import MainCouponLandingPage from './pages/couponsPage/mainCouponsLandingPage'
 import ShowableProductDetails from './pages/productDetailPage/showableProductDetails'
 import MainStorePage from './pages/storesCouponsPage/mainStorePage'
+import TestTodo from './pages/test';
+import Test22 from './pages/test2';
 
 
 
@@ -110,11 +112,13 @@ function App() {
   return (
     <Box >
      <ResponsiveAppBar/>
- {/* <ControlledCarousel/> */}
-      {/* <MainCouponLandingPage/> */}
-      <MainStorePage/>
+     {/* <TestTodo/> */}
+ <ControlledCarousel/>
+ {/* <Test22/> */}
+       {/* <MainCouponLandingPage/>  */}
+      {/* <MainStorePage/> */}
       <Box sx={{marginX:'30px'}}>
-      {/* <CatName categoryHeading="Categories" productHeading="Popular Categories"/>
+      <CatName categoryHeading="Categories" productHeading="Popular Categories"/>
       <div style={{height:'30px'}}></div>
       <Carousel  responsive={responsive}>
         {product}
@@ -163,7 +167,7 @@ function App() {
         <Grid item lg={1}>
           
         </Grid>
-      </Grid>  */}
+      </Grid> 
      
 
 

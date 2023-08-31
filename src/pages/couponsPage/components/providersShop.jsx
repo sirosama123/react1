@@ -89,11 +89,12 @@ const couponsData = [
       },
 ];
 
-export default function ProviderShops(){
+function ProviderShops(){
+ 
     return (
+  
         
         <Grid container>
-            
             <Grid item lg={1}>
             
             </Grid>
@@ -123,6 +124,9 @@ export default function ProviderShops(){
 
             </Grid>
         </Grid>
-      
+
+  
     )
 }
+
+export default ProviderShops;

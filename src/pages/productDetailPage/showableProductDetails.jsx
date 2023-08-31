@@ -35,11 +35,9 @@ export default function ShowableProductDetails() {
       </Box>
       
       <div style={{height:'30px'}}></div>
-      <Provider store={store}>
       <div className="App">
         <ImageSwitcher variations={variations} images={images} initialBigImageSrc={initialBigImageSrc} colorList={colorList} />
       </div>
-    </Provider>
     <div style={{height:'30px'}}></div>
     <CatName categoryHeading="Today's" productHeading="Related Products"/>
     <div style={{height:'30px'}}></div>

@@ -5,13 +5,18 @@ import './index.css'
 import './fonts.css'
 import 'aos/dist/aos.css'; // Import the AOS styles
 import AOS from 'aos'; // Import the AOS library
+import store from './stateManagement/store'
 
 AOS.init();
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+import { Provider } from "react-redux";
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
 
