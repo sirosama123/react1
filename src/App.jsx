@@ -36,7 +36,9 @@ import MainCouponLandingPage from './pages/couponsPage/mainCouponsLandingPage'
 import ShowableProductDetails from './pages/productDetailPage/showableProductDetails'
 import MainStorePage from './pages/storesCouponsPage/mainStorePage'
 import TestTodo from './pages/test';
-import Test22 from './pages/test2';
+import CarouselSlider22 from './pages/test2';
+import MainPageSlider11 from './pages/mainPageSlider/mainPageSlider';
+
 
 
 
@@ -112,9 +114,12 @@ function App() {
   return (
     <Box >
      <ResponsiveAppBar/>
-     {/* <TestTodo/> */}
+
  <ControlledCarousel/>
- {/* <Test22/> */}
+ <Box sx={{width:'100%' ,height:'700px',backgroundImage:"repeating-linear-gradient(#1A9BF7 7%, #FFF 10%)" }}>
+ <MainPageSlider11/>
+ </Box>
+ {/* <CarouselSlider22/> */}
        {/* <MainCouponLandingPage/>  */}
       {/* <MainStorePage/> */}
       <Box sx={{marginX:'30px'}}>
