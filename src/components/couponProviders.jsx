@@ -12,16 +12,7 @@ export default function CouponProviders(){
         <Box sx={{padding:'40px',backgroundColor:"#F5F5F5",borderRadius:'10px',boxShadow: 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px',}}>
            <Grid container spacing={2} justifyContent="center" >
            <Grid lg={4}>
-             <Box sx={{
-               //  paddingTop:'20px',
-                display:'flex',
-                flexDirection:'column',
-                alignItems:'center',
-                justifyContent:'start',
-                backgroundColor:"#1A9BF7",
-                height:'100%',
-                borderRadius:'50%'
-             }}>
+             <Box>
                 <Grid>
                     <Grid lg={12}>
                         <Box sx={{}}>

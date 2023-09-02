@@ -19,6 +19,8 @@ import TopUsersComments from './components/topUserComments'
 import CustomerRatings from './components/CustomerRatings'
 import FAQS  from './components/faqs';
 import SimilarStores from './components/similarStores';
+import ResponsiveAppBar from '../../components/bar2';
+import Footer from '../../components/footer';
 
 const couponsData = [
     {
@@ -130,11 +132,13 @@ const couponData = [
         title: "5% OFF Noon coupon code 2023 for returning users | Up to 25 AED Cashback",
         code:'ALCNOON'
       },
-    // Add more coupon objects as needed
   ];
 export default function MainStorePage() {
     return (
         <Grid container >
+            <Grid item lg={12}>
+            <ResponsiveAppBar activePage={'All Stores'} />
+            </Grid>
             <Grid item lg={1}>
 
             </Grid>
@@ -464,12 +468,16 @@ export default function MainStorePage() {
                                     In the case of receiving damaged or the wrong product, do not use the product and keep it in the original packaging. Make sure items received are not used, don’t remove their labels and tags, otherwise the return won’t be accepted.
                                     </div>
                                 </div>
+                                <div style={{ height: '30px' }}></div>
                         </div>
                     </Grid>
                 </Grid>
             </Grid>
             <Grid item lg={1}>
 
+            </Grid>
+            <Grid item lg={12}>
+            <Footer />
             </Grid>
         </Grid>
     )

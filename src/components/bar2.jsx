@@ -15,11 +15,18 @@ import LocalMallIcon from '@mui/icons-material/LocalMall';
 import logo from '/dealsorb/src/assets/logo.png'
 import CustomizedInputBase from './searcBar1'
 import ImageBanner from './banner'
+import { Link } from "react-router-dom";
 
-const pages = ["Home", "Categories", "Deal & Coupons", "About US"];
+const pages = ["Home", "All Stores", "Deals & Coupons"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const tabToRoute = {
+  "Home": "",
+  "All Stores": "coupon-store",
+  "Deals & Coupons": "coupon-deals",
+};
 
-function ResponsiveAppBar() {
+
+function ResponsiveAppBar({ activePage }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -124,15 +131,33 @@ function ResponsiveAppBar() {
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{my: {md:0}, fontSize:{md:12 ,lg:14}, color: {md:"black" ,lg:"black"}, display: "block" }}
-              >
-                {page}
-              </Button>
+              <Box sx={{
+                borderBottom: activePage === page ? '2px Solid primary.main' : '2px Solid white',
+                transition: 'background-color 0.1s', // Add a transition for background-color
+                '&:hover': {
+                  borderBottom: '2px Solid black', // Change the background color on hover
+                },
+              }}>
+                  <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  component={Link} // Use the Link component for routing
+                  to={`/${tabToRoute[page]}`} // Use the mapped route name
+                  sx={{
+                    my: { md: 0 },
+                    fontSize: { md: 12, lg: 14 },
+                    color: activePage === page ? "primary.main" : "black",
+                    
+                    display: "block",
+                    fontWeight:'bold'
+                  }}
+                >
+                  {page}
+                </Button>
+              </Box>
             ))}
           </Box>
+
           <Box sx={{ mr: 2 ,display: { xs: "none", md: "flex" },}}> <CustomizedInputBase  /></Box>
           <Box sx={{ mr: 2 ,display: { xs: "none", md: "flex" },}}><Button href="#text-buttons">Login</Button></Box>
           <Box sx={{ flexGrow: 0 }}>

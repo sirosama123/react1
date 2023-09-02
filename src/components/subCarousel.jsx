@@ -2,15 +2,16 @@ import Carousel from 'react-bootstrap/Carousel';
 import pic1 from '/dealsorb/src/assets/1.jpg';
 import pic2 from '/dealsorb/src/assets/2.jpg';
 import pic3 from '/dealsorb/src/assets/3.jpg';
+import './subCarousel.css'
+
 
 
 function SubCarousel() {
   return (
     <Carousel>
       <Carousel.Item>
-        
         <div style={{height:'450px', width:'100%',borderRadius:'50%'}}>
-        <img src={pic1}  height="100%" width='100%' alt="" srcset="" />
+        <img src={pic1} style={{borderRadius:'20px'}}  height="100%" width='100%' alt="" srcset="" />
         </div>
         <Carousel.Caption>
           <h3>First slide label</h3>
@@ -19,7 +20,7 @@ function SubCarousel() {
       </Carousel.Item>
       <Carousel.Item>
       <div style={{height:'450px', width:'100%',borderRadius:'50%'}}>
-        <img src={pic2}  height="100%" width='100%' alt="" srcset="" />
+        <img src={pic2}  style={{borderRadius:'20px'}}   height="100%" width='100%' alt="" srcset="" />
         </div>
         <Carousel.Caption>
           <h3>Second slide label</h3>
@@ -28,7 +29,7 @@ function SubCarousel() {
       </Carousel.Item>
       <Carousel.Item>
       <div style={{height:'450px', width:'100%',borderRadius:'50%'}}>
-        <img src={pic3}  height="100%" width='100%' alt="" srcset="" />
+        <img src={pic3} style={{borderRadius:'20px'}}   height="100%" width='100%' alt="" srcset="" />
         </div>
         <Carousel.Caption>
           <h3>Third slide label</h3>

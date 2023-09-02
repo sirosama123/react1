@@ -31,7 +31,7 @@ export default function ShowableProductDetails() {
     return(
       <>
       <Box sx={{marginX:'-30px'}}>
-      <ResponsiveAppBar/>
+      {/* <ResponsiveAppBar activePage={'Deal & Coupons'} /> */}
       </Box>
       
       <div style={{height:'30px'}}></div>

@@ -104,7 +104,7 @@ export default function MainCouponLandingPage() {
     return(
         <>
         
-<ResponsiveAppBar/>
+<ResponsiveAppBar activePage={'Deals & Coupons'} />
 <Grid container sx={{
    backgroundImage: `url('https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/banner1.jpg?alt=media&token=e3b1b3ba-799b-4c46-88c5-27d037ffcb68')`,
    backgroundSize: 'cover',
@@ -384,7 +384,9 @@ export default function MainCouponLandingPage() {
         <p>Many promotional vouchers require a minimum order value. This means that your order should be equal to or exceed a certain amount before you can activate the discount. The minimum order applies only on the actual cost of an item in your purchase, after any immediate discounts, and does not include additional expenses such as taxes or shipping.</p>
       </div>
       </div>
+     
       </Grid>
+     
     </Grid>
    
   </Grid>
@@ -394,6 +396,7 @@ export default function MainCouponLandingPage() {
   </Grid>
 </Grid>
 <div style={{height:'30px'}}></div> 
+<Footer/>
         </>
     )
 } 
