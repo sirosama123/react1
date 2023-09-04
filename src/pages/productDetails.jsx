@@ -248,10 +248,10 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
                 </Grid>
         </Grid>
         <Grid item lg={5} md={5}> {/*  grid for product description */}
-          <Typography sx={{ fontWeight: 'semi-bold', fontSize: '24px', color: 'black' }}>
+          <Typography sx={{ fontWeight: 'bolder', fontSize: '28px', color: 'black' }}>
             Havic HV G-92 Gamepad
           </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', marginY: '5px' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', marginY: '10px' }}>
             <Rating name="read-only" value={3} readOnly />
             <Typography sx={{ fontWeight: 'bold', fontSize: '14px', color: 'grey', marginX: '5px' }}>
               (150 Reviews)
@@ -267,13 +267,13 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
           <Typography sx={{ fontWeight: 'regular', fontSize: '24px', color: 'black' }}>
             Rs 1200/.
           </Typography>
-          <Typography sx={{ fontWeight: 'regular', fontSize: '14px', color: 'black' }}>
+          <Typography sx={{ fontWeight: 'regular', fontSize: '14px', color: 'black' , marginY: '10px' }}>
             PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.
           </Typography>
-          <Box sx={{ borderBottom: '2px solid grey', marginX: '10px' }}>
+          <Box sx={{ borderBottom: '1px solid grey'}}>
 
           </Box>
-          <Typography sx={{ fontWeight: 'regular', fontSize: '20px', color: 'black', marginY: '5px' }}>
+          <Typography sx={{ fontWeight: 'bold', fontSize: '20px', color: 'black', marginY: '5px' }}>
             Colors:
           </Typography>
           <div className="color-selector">
@@ -288,7 +288,8 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
               </div>
             ))}
           </div>
-          <Typography sx={{ fontWeight: 'regular', fontSize: '20px', color: 'black', marginY: '5px' }}>
+          <div style={{ height: '15px' }}></div>
+          <Typography sx={{ fontWeight: 'bold', fontSize: '20px', color: 'black', marginY: '5px' }}>
             Sizes:
           </Typography>
           <div className="variation-selector">
@@ -302,28 +303,31 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
               </button>
             ))}
           </div>
-          <div style={{ height: '20px' }}></div>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Box sx={{ height: '40px', width: '40px', borderRadius: '5px', border: '2px solid #DB4444', display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={incrementCounter}>
-              <AddIcon />
-            </Box>
-            <div style={{ width: '10px' }}></div>
-            <Box sx={{ height: '40px', width: '40px', borderRadius: '5px', border: '2px solid #DB4444', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ height: '15px' }}></div>
+          <Typography sx={{ fontWeight: 'bold', fontSize: '20px', color: 'black', marginY: '5px' }}>
+            Select Quantity:
+          </Typography>
+          <Box sx={{display:"flex",flexDirection:'row'}}>
+            <Box sx={{ display: 'flex', alignItems: 'center'  }}>
+              <Box sx={{ height: '40px', width: '40px', borderRadius: '5px', border: '2px solid #DB4444', display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={incrementCounter}>
+                <AddIcon />
+              </Box>
+             
+              <Box sx={{ height: '40px', width: '40px', borderRadius: '5px', border: '2px solid #DB4444', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
-              <Typography sx={{ fontWeight: 'bold', fontSize: '25px', color: 'black' }}>
-                {count}
-              </Typography>
+                <Typography sx={{ fontWeight: 'bold', fontSize: '25px', color: 'black' }}>
+                  {count}
+                </Typography>
 
+              </Box>
+              
+              <Box sx={{ height: '40px', width: '40px', borderRadius: '5px', border: '2px solid #DB4444', display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={decrementCounter}>
+                <RemoveIcon />
+              </Box>
             </Box>
-            <div style={{ width: '10px' }}></div>
-            <Box sx={{ height: '40px', width: '40px', borderRadius: '5px', border: '2px solid #DB4444', display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={decrementCounter}>
-              <RemoveIcon />
-            </Box>
-          </Box>
-          <div style={{ height: '10px' }}></div>
-          <Button sx={{
-            paddingX: '20px',
-            paddingY: '10px',
+            <Button sx={{
+            width:'200px',
+            height:'40px',
             fontSize: '12px',
             fontWeight: 'bold',
             color: '#DB4444',
@@ -334,6 +338,9 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
               border: '2px solid #DB4444',
             },
           }} variant="outlined">Add To Cart</Button>
+          </Box>
+          <div style={{ height: '10px' }}></div>
+         
 
         </Grid>
       </Grid>

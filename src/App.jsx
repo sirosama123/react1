@@ -43,6 +43,8 @@ import Routing from './Routes/routing';
 import MainCarouselTesting from './pages/carouselTesting/mainCarouselTesting';
 import SubCarouselTesting from './pages/carouselTesting2/subCarouselTesting';
 import MainTree from './pages/mainTree/mainTree';
+import MainCategories from './pages/categoriesPage/mainCategoriesPage';
+import AllStores from './pages/AllStores/allStores';
 
 
 
@@ -50,24 +52,9 @@ import MainTree from './pages/mainTree/mainTree';
 function App() {
 
   return (
-//     <Box >
-//       {/* <CarouselSlider22/> */}
-//       {/* <MainCouponLandingPage/>  */}
-//       {/* <MainStorePage/> */}
-//       <Box sx={{marginX:'30px'}}>
-
-// <ShowableProductDetails/>
-     
-    
-//       </Box>
-//       <div style={{height:'30px'}}></div>
-//       <Footer/>
-//     </Box>
-<>
-{/* 
-<MainTree/> */}
-<ShowableProductDetails/>
-</>
+      <>
+      <ShowableProductDetails/>
+      </>
   )
 }
 export default App

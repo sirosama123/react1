@@ -17,10 +17,12 @@ import CustomizedInputBase from './searcBar1'
 import ImageBanner from './banner'
 import { Link } from "react-router-dom";
 
-const pages = ["Home", "All Stores", "Deals & Coupons"];
+const pages = ["Home","Categories", "All Stores","Stores","Deals & Coupons"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const tabToRoute = {
   "Home": "",
+  "Categories":'categories',
+  "Stores":'all-stores',
   "All Stores": "coupon-store",
   "Deals & Coupons": "coupon-deals",
 };

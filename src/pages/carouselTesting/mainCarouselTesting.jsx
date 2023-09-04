@@ -6,21 +6,45 @@ import 'swiper/css/pagination';
 import './mainCarouselTesting.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
+
+function getSwipeDirection(swiper) {
+  const { slidesPerView, currentSlide, previousSlide } = swiper;
+
+  // Calculate the distance of the swipe.
+  let swipeDistance = currentSlide - previousSlide;
+  if (swipeDistance < 0) {
+    swipeDistance += slidesPerView;
+  }
+
+  // Determine the swipe direction.
+  if (swipeDistance > 0) {
+    return "right";
+  } else if (swipeDistance < 0) {
+    return "left";
+  } else {
+    return "none";
+  }
+}
+
 export default function MainCarouselTesting({ images }) {
-  const subCarouselRef = useRef(null);
-  const [isSubCarouselDragging, setIsSubCarouselDragging] = useState(false);
+  const [mainCarouselSwiper, setMainCarouselSwiper] = useState(null);
+  const [subCarouselSwiper, setSubCarouselSwiper] = useState(null);
+  const [swiper, setSwiper] = useState(null);
 
   const handleSubCarouselDrag = () => {
-    setIsSubCarouselDragging(true);
+    if (mainCarouselSwiper && subCarouselSwiper) {
+      mainCarouselSwiper.controller.control = subCarouselSwiper;
+      subCarouselSwiper.controller.control = mainCarouselSwiper;
+    }
   };
 
-  const handleSubCarouselDragEnd = () => {
-    setIsSubCarouselDragging(false);
+  const onSwipeChange = () => {
+    const direction = getSwipeDirection(swiper);
+    console.log("Swipe direction:", direction);
   };
 
   return (
     <div className="main-carousel-container">
-      <div className={`overlay ${isSubCarouselDragging ? 'visible' : ''}`}></div>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -30,7 +54,8 @@ export default function MainCarouselTesting({ images }) {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className={`mySwiper2 ${isSubCarouselDragging ? 'hidden' : ''}`}
+        className={`mySwiper2`}
+        onSlideChange={onSwipeChange}
       >
         {images.map((imageUrl, index) => (
           <SwiperSlide className='swipeSlide2' key={index}>
@@ -40,7 +65,6 @@ export default function MainCarouselTesting({ images }) {
       </Swiper>
       <div className='subCar'>
         <Swiper
-          ref={subCarouselRef}
           slidesPerView={2}
           centeredSlides={true}
           spaceBetween={30}
@@ -51,8 +75,8 @@ export default function MainCarouselTesting({ images }) {
           }}
           modules={[Autoplay]}
           className="mySwiper3"
+          onSwiper={setSubCarouselSwiper}
           onSlideChange={handleSubCarouselDrag}
-          onSlideChangeTransitionEnd={handleSubCarouselDragEnd}
         >
           {images.map((_, index) => (
             <SwiperSlide className='swiperSlide3' key={index}>

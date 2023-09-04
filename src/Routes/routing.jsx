@@ -4,6 +4,8 @@ import ShowableProductDetails from "../pages/productDetailPage/showableProductDe
 import MainCouponLandingPage from "../pages/couponsPage/mainCouponsLandingPage";
 import MainLandingPage from "../pages/landingPage/landingPage";
 import MainStorePage from "../pages/storesCouponsPage/mainStorePage";
+import MainCategories from "../pages/categoriesPage/mainCategoriesPage";
+import AllStores from "../pages/AllStores/allStores";
 
 
 
@@ -15,6 +17,8 @@ function Routing(){
                 <Route path="/product-details" element={<ShowableProductDetails/>} />
                 <Route path="/coupon-deals" element={<MainCouponLandingPage/>}/>
                 <Route path="/coupon-store" element={<MainStorePage/>}/>
+                <Route path="/all-stores" element={<AllStores/>}/>
+                <Route path="/categories" element={<MainCategories/>}/>
             </Routes>
         </BrowserRouter>
     )
