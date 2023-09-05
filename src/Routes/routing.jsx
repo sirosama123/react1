@@ -7,8 +7,6 @@ import MainStorePage from "../pages/storesCouponsPage/mainStorePage";
 import MainCategories from "../pages/categoriesPage/mainCategoriesPage";
 import AllStores from "../pages/AllStores/allStores";
 
-
-
 function Routing(){
     return (
         <BrowserRouter>

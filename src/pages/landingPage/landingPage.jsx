@@ -42,6 +42,7 @@ function MainLandingPage() {
         description={item.description}
         rating={item.rating}
         brandLogo={item.brandLogo}
+        arrayImages={item.arrayImages}
       />
     ));
     const product23 = discountProdcts.map((item) => (

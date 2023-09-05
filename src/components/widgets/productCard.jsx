@@ -8,8 +8,19 @@ import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import IconButton from '@mui/material/IconButton';
 import Looks from '@mui/icons-material/Looks';
+import { useHistory } from 'react-router-dom';
 
 export default function ProductCard1(props) {
+
+    const history = useHistory();
+
+    const handleButtonClick = () => {
+      // Pass props along with the route
+      history.push('/product-details', { 
+        prop1: arrayImages,
+    });
+    };
+
     return (
         <Box
             sx={{
@@ -163,7 +174,7 @@ export default function ProductCard1(props) {
                             </Typography>
                            </Box>
                           
-                            <Button sx={{
+                            <Button onClick={handleButtonClick} sx={{
                                 paddingX:'20px',
                                 paddingY:'0px',
                                 fontSize: '12px',
