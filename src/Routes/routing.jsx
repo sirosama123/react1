@@ -12,7 +12,7 @@ function Routing(){
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainLandingPage/>} />
-                <Route path="/product-details" element={<ShowableProductDetails/>} />
+                <Route path="/product-details" element={<ShowableProductDetails />}/>
                 <Route path="/coupon-deals" element={<MainCouponLandingPage/>}/>
                 <Route path="/coupon-store" element={<MainStorePage/>}/>
                 <Route path="/all-stores" element={<AllStores/>}/>

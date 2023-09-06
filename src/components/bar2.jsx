@@ -16,6 +16,8 @@ import logo from '/dealsorb/src/assets/logo.png'
 import CustomizedInputBase from './searcBar1'
 import ImageBanner from './banner'
 import { Link } from "react-router-dom";
+import { toggleVisibility } from "../stateManagement/slices/cartVisibilitySlice";
+import { useDispatch } from 'react-redux';
 
 const pages = ["Home","Categories", "All Stores","Stores","Deals & Coupons"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -46,7 +48,11 @@ function ResponsiveAppBar({ activePage }) {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const dispatch = useDispatch();
 
+  const handleButtonClick = () => {
+    dispatch(toggleVisibility());
+  };
   return (
    
     <Box sx={{right:'0',left:'0',width: '100%',}}>
@@ -161,7 +167,7 @@ function ResponsiveAppBar({ activePage }) {
           </Box>
 
           <Box sx={{ mr: 2 ,display: { xs: "none", md: "flex" },}}> <CustomizedInputBase  /></Box>
-          <Box sx={{ mr: 2 ,display: { xs: "none", md: "flex" },}}><Button href="#text-buttons">Login</Button></Box>
+          <Box sx={{ mr: 2 ,display: { xs: "none", md: "flex" },}}><Button  onClick={handleButtonClick}>Login</Button></Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

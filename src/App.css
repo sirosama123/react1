@@ -226,3 +226,21 @@
   background-size: cover;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/zelleclients.appspot.com/o/step-1-copy-coupon-code-v1%201.png?alt=media&token=af5ec3bd-daec-4e88-9376-bceeafceddd1");
 }
+
+
+.cartt {
+  position: fixed;
+  top: 0;
+  right: 0px; /* Initial position, outside the viewport */
+  height: 100%;
+  width: 300px;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  z-index: 9999;
+  transition: right 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+
+.cartt.visible {
+  right: 0; /* Show the container by translating it back to the viewport */
+}

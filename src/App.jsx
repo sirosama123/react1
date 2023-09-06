@@ -45,6 +45,7 @@ import SubCarouselTesting from './pages/carouselTesting2/subCarouselTesting';
 import MainTree from './pages/mainTree/mainTree';
 import MainCategories from './pages/categoriesPage/mainCategoriesPage';
 import AllStores from './pages/AllStores/allStores';
+import TemporaryDrawer from './pages/landingPage/landing2';
 
 
 
@@ -68,7 +69,8 @@ function App() {
   
   return (
       <>
-      <Routing />
+      <Routing/>
+      {/* <ShowableProductDetails images={images}/> */}
       </>
   )
 }

@@ -20,6 +20,10 @@ import DiscountCard1 from '../../components/discountCard';
 import Benefits from '../../components/benefits';
 import Footer from '../../components/footer';
 import MainPageSlider11 from '../mainPageSlider/mainPageSlider';
+import { useSelector } from 'react-redux';
+import { CloseRounded } from '@mui/icons-material';
+import { IconButton } from '@mui/material';
+import CartItems from '../../components/cartUi/cartMain';
 
 
 
@@ -33,7 +37,7 @@ function MainLandingPage() {
         description={item.description}
       />
     ));
-
+    const isVisible = useSelector((state) => state.visibility);
     const product22 = productData2.map((item) => (
       <ProductCard1
         name={item.name}
@@ -58,8 +62,9 @@ function MainLandingPage() {
      
     return (
       <Box >
+        
        <ResponsiveAppBar activePage="Home" />
-  
+      <CartItems/>
    {/* <ControlledCarousel/> */}
    <Box sx={{width:'100%' ,height:'530px',backgroundImage:" linear-gradient(90deg, rgba(16,80,126,1) 5%, rgba(26,155,247,1) 46%, rgba(16,80,126,1) 97%)",paddingTop:'20px' }}>
    <MainPageSlider11/>
@@ -67,6 +72,7 @@ function MainLandingPage() {
    {/* <CarouselSlider22/> */}
          {/* <MainCouponLandingPage/>  */}
         {/* <MainStorePage/> */}
+       
         <Box sx={{marginX:'30px'}}>
         <div style={{height:'30px'}}></div>
         <CatName categoryHeading="Categories" productHeading="Popular Categories"/>
@@ -74,6 +80,7 @@ function MainLandingPage() {
         <Carousel  responsive={responsive}>
           {product}
         </Carousel>
+       
         <div style={{height:'60px'}}></div>
         <CatName categoryHeading="Featured" productHeading="New Arrivals"/>
         <div style={{height:'30px'}}></div>
