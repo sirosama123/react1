@@ -8,14 +8,36 @@ import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import IconButton from '@mui/material/IconButton';
 import Looks from '@mui/icons-material/Looks';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useData } from '../../context/myData';
+import { DataProvider } from '../../context/myData';
 
 export default function ProductCard1(props) {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
+    const { setProductData } = useData();
 
-    const handleProductClick = () => {
-        this.props.history.push("/product-details", { state: props.arrayImages});
-    };
+    const images = [
+        "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
+        "https://dealsorb.com/wp-content/uploads/2022/03/Graco-TurboBooster-Highback-Booster-Seat.png",
+        "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
+        "https://dealsorb.com/wp-content/uploads/2022/03/Fire-TV-Stick-Lite-with-latest-Alexa-Voice-Remote-Lite-no-TV-controls-HD-streaming-device.png",
+        "https://images.unsplash.com/photo-1557245526-45dc0f1a8745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://dealsorb.com/wp-content/uploads/2022/03/Graco-TurboBooster-Highback-Booster-Seat.png",
+        "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
+        "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://dealsorb.com/wp-content/uploads/2022/03/Graco-TurboBooster-Highback-Booster-Seat.png",
+        "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
+        "https://dealsorb.com/wp-content/uploads/2022/03/Fire-TV-Stick-Lite-with-latest-Alexa-Voice-Remote-Lite-no-TV-controls-HD-streaming-device.png",
+        "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHByb2R1Y3RzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://dealsorb.com/wp-content/uploads/2022/03/Graco-TurboBooster-Highback-Booster-Seat.png",
+        "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
+      ];
+
+      const handleProductDetailsClick = () => {
+        setProductData(props.arrayImages);
+        navigate(`/product-details/${props.name}`);
+      };
+
 
     return (
         <Box
@@ -170,7 +192,7 @@ export default function ProductCard1(props) {
                             </Typography>
                            </Box>
                           
-                            <Button onClick={handleProductClick}  sx={{
+                            <Button onClick={handleProductDetailsClick} sx={{
                                 paddingX:'20px',
                                 paddingY:'0px',
                                 fontSize: '12px',
@@ -183,6 +205,7 @@ export default function ProductCard1(props) {
                                     borderColor: 'black',
                                 },
                             }} variant="outlined">Add</Button>
+                           
                            </Box>
    </Box>
             

@@ -176,7 +176,7 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 660px) {
   .mobileViewSlider{
     display: flex;
   }
@@ -191,7 +191,7 @@
   }
   
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .images-containerMobileView{
     max-width:350px;
   }

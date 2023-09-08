@@ -46,6 +46,8 @@ import MainTree from './pages/mainTree/mainTree';
 import MainCategories from './pages/categoriesPage/mainCategoriesPage';
 import AllStores from './pages/AllStores/allStores';
 import TemporaryDrawer from './pages/landingPage/landing2';
+import BasicAccordion from './pages/testingAcodion';
+import { DataProvider } from './context/myData';
 
 
 
@@ -69,8 +71,14 @@ function App() {
   
   return (
       <>
-      <Routing/>
+  
+ 
+  <DataProvider>
+  <Routing/>
+  </DataProvider>
+      
       {/* <ShowableProductDetails images={images}/> */}
+      {/* <BasicAccordion/> */}
       </>
   )
 }

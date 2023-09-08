@@ -27,6 +27,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -196,9 +200,9 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
   };
 
   return (
-    <Box>
-     <Grid container>   {/*  main grid of page */}
-        <Grid item lg={6.5} md={6.5} sx={{marginX:'10px'}} >
+   
+     <Grid container spacing={1}>   {/*  main grid of page */}
+        <Grid item lg={6.5} md={6.5} sm={12} xs={12} sx={{}} >
         <Typography sx={{ fontWeight: 'bolder', fontSize: '22px', color: 'black' }}>
                 Havic HV G-92 Gamepad
               </Typography>
@@ -305,7 +309,7 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
                     </div>
                
                   </Grid>
-                  <Grid item lg={10} md={10} sm={10} xs={12} sx={{}}>
+                  <Grid item lg={10} md={10} sm={12} xs={12} sx={{}}>
                     <Box sx={{ overflow: 'hidden' }} id="imageContainer">
                    
                     <PrismaZoom>
@@ -313,14 +317,46 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
                     </Box>
                   </Grid>
                   <Grid item lg={12} md={12} sm={12} xs={12} sx={{marginY:'30px'}}>
-                  <Typography sx={{ fontWeight: 'bold', fontSize: '20px', color: 'black', marginY: '5px' }}>
-                      Key attributes
-                  </Typography>  
-                  <Typography sx={{ fontWeight: 'bold', fontSize: '16px', color: 'black', marginY: '10px' }}>
-                  Industry-specific attributes
-                  </Typography>  
-                  <TableContainer sx={{ width: '600px',marginY: '10px' }} component={Paper}>
-      <Table sx={{ width: '600px' }} aria-label="customized table">
+                 
+                 
+                 
+                  
+              
+  
+
+
+                  <Accordion defaultExpanded={true}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+           <Typography sx={{ fontWeight: 'bold', fontSize: '16px', color: 'black', marginY: '10px' }}>
+                 Description
+                  </Typography> 
+        </AccordionSummary>
+        <AccordionDetails>
+        <Typography sx={{ fontWeight: 'regular', fontSize: '14px', color: 'black' , marginY: '5px' }}>
+                    PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.
+                  </Typography>
+        </AccordionDetails>
+      </Accordion>
+
+    <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+          sx={{}}
+        >
+             <Typography sx={{ fontWeight: 'bold', fontSize: '16px', color: 'black', marginY: '10px' }}>
+                  Key Attributes
+                  </Typography> 
+        </AccordionSummary>
+        <AccordionDetails>
+      
+        <TableContainer sx={{ width: '100%',marginY: '10px' }} component={Paper}>
+      <Table sx={{ width: '100%' }} aria-label="customized table">
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
@@ -333,18 +369,30 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
         </TableBody>
       </Table>
     </TableContainer>
+        </AccordionDetails>
+      </Accordion>
+    
+
+
+
+
+
+
+
+
+
                   </Grid>
                 </Grid>
         </Grid>
-        <Grid item lg={5} md={5}>
+        <Grid item lg={5.5} md={5.5} sm={12} xs={12} sx={{}}>
           <div className="content">
           <Typography sx={{ fontWeight: '900', fontSize: '18px', color: '#DB4444' }}>
                 5% OFF
           </Typography>
-          <div style={{height:"10px"}}></div>
-          <Typography sx={{ fontWeight: 'bold', fontSize: '14px', color: 'grey' }}>
+          <div style={{height:"5px"}}></div>
+          {/* <Typography sx={{ fontWeight: 'bold', fontSize: '14px', color: 'grey' }}>
             Minimum Order Quantity : 1 Piece
-          </Typography>
+          </Typography> */}
           <Typography sx={{ fontWeight: 'bolder', fontSize: '22px', color: 'black' }}>
                 $50.05 - $70.04
           </Typography>
@@ -359,7 +407,7 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
 
 
 
-          <Typography sx={{ fontWeight: 'bolder', fontSize: '20px', color: 'black', marginY: '5px' }}>
+          <Typography sx={{ fontWeight: 'bolder', fontSize: '15px', color: 'black', marginY: '5px' }}>
             Variations
           </Typography>
           <Typography sx={{ fontWeight: 'bold', fontSize: '12px', color: 'black', marginY: '5px' }}>
@@ -405,24 +453,24 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
            </div>
           </Box>
      
-          <Typography sx={{ fontWeight: 'bold', fontSize: '20px', color: 'black', marginY: '5px' }}>
+          <Typography sx={{ fontWeight: 'bold', fontSize: '15px', color: 'black', marginY: '5px' }}>
             Select Quantity:
           </Typography>
          
             <Box sx={{ display: 'flex', alignItems: 'center'  }}>
-              <Box sx={{backgroundColor:"#DB4444", height: '40px', width: '40px', borderRadius: '5px 0px 0px 5px', borderLeft: '1px solid #DB4444',borderTop: '1px solid #DB4444',borderBottom: '1px solid #DB4444' ,borderRight: '0px solid #DB4444',display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={incrementCounter}>
+              <Box sx={{backgroundColor:"#DB4444", height: '30px', width: '30px', borderRadius: '5px 0px 0px 5px', borderLeft: '1px solid #DB4444',borderTop: '1px solid #DB4444',borderBottom: '1px solid #DB4444' ,borderRight: '0px solid #DB4444',display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={incrementCounter}>
                 <AddIcon sx={{color:'white'}} />
               </Box>
              
-              <Box sx={{ height: '40px', width: '40px', borderRadius: '0px', borderTop: '2px solid #DB4444',borderBottom:'2px solid #DB4444', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <Box sx={{ height: '30px', width: '30px', borderRadius: '0px', borderTop: '2px solid #DB4444',borderBottom:'2px solid #DB4444', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
-                <Typography sx={{ fontWeight: 'bold', fontSize: '25px', color: 'black',cursor:'pointer' }}>
+                <Typography sx={{ fontWeight: 'bold', fontSize: '20px', color: 'black',cursor:'pointer' }}>
                   {count}
                 </Typography>
 
               </Box>
               
-              <Box sx={{ backgroundColor:"#DB4444", height: '40px', width: '40px', borderRadius: '0px 5px 5px 0px', borderLeft: '0px solid #DB4444',borderTop: '1px solid #DB4444',borderBottom: '1px solid #DB4444' ,borderRight: '1px solid #DB4444', display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={decrementCounter}>
+              <Box sx={{ backgroundColor:"#DB4444", height: '30px', width: '30px', borderRadius: '0px 5px 5px 0px', borderLeft: '0px solid #DB4444',borderTop: '1px solid #DB4444',borderBottom: '1px solid #DB4444' ,borderRight: '1px solid #DB4444', display: 'flex', justifyContent: 'center', alignItems: 'center' }} onClick={decrementCounter}>
                 <RemoveIcon sx={{color:'white'}}  />
               </Box>
             </Box>
@@ -546,7 +594,7 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
 
         </Grid>
       </Grid>
-    </Box>
+  
   );
 };
 

@@ -7,8 +7,16 @@ import "react-multi-carousel/lib/styles.css";
 import './index.css'
 import ResponsiveAppBar from '/dealsorb/src/components/bar2'
 import Box from '@mui/material/Box';
+import { useLocation } from 'react-router-dom';
+import { useData } from '../../context/myData';
+import { useParams } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
+
 
 export default function ShowableProductDetails(props) {
+  const { productData } = useData();
+  const { productName } = useParams();
+  const parsedProductArray = productName;
     const colorList = ['#FF5733', '#33FFA6', '#3366FF', '#FF33E9'];
     const variations = ['xs', 'sm', 'md', 'lg', 'xl'];
     // const images = [
@@ -32,17 +40,26 @@ export default function ShowableProductDetails(props) {
     // console.log(props.images);
     return(
       <>
-      <Box sx={{marginX:'-30px'}}>
-      {/* <ResponsiveAppBar activePage={'Deal & Coupons'} /> */}
-      </Box>
+      <ResponsiveAppBar activePage={'Deal & Coupons'} />
+
       
-      <div style={{height:'30px'}}></div>
-      <div className="App">
-        <ImageSwitcher variations={variations} images={props.images} initialBigImageSrc={props.images[0]} colorList={colorList} />
-      </div>
-    <div style={{height:'30px'}}></div>
-    <CatName categoryHeading="Today's" productHeading="Related Products"/>
-    <div style={{height:'30px'}}></div>
+      <Grid container>
+        <Grid item lg={0.5}>
+
+        </Grid>
+        <Grid item lg={11}>
+          <div style={{height:'30px'}}></div>
+          <div className="App">
+            <ImageSwitcher variations={variations} images={productData} initialBigImageSrc={productData[0]} colorList={colorList} />
+          </div>
+          <div style={{height:'30px'}}></div>
+          <CatName categoryHeading="Today's" productHeading="Related Products"/>
+          <div style={{height:'30px'}}></div>
+        </Grid>
+        <Grid item lg={0.5}>
+
+        </Grid>
+      </Grid>
       </>
     )
 } 
