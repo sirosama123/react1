@@ -4,6 +4,11 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import Box from '@mui/material/Box';
 import Typography from "@mui/material/Typography";
+import { useSelector, useDispatch } from "react-redux";
+import {  getCartTotal,
+  removeItem,
+  decreaseItemQuantity,
+  increaseItemQuantity, } from '../../stateManagement/slices/cartSlice';
 
 function CartProductView() {
 
@@ -18,6 +23,16 @@ function CartProductView() {
         setCount(prevCount => prevCount - 1);
       }
     };
+
+    const { cart, totalQuantity, totalPrice } = useSelector(
+      (state) => state.allCart
+    );
+  
+    const dispatch = useDispatch();
+  
+    useEffect(() => {
+      dispatch(getCartTotal());
+    }, [cart]);
 
     return(
         <div className="cartItems">

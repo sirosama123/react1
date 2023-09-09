@@ -8,7 +8,7 @@ export function useData() {
 }
 
 export function DataProvider({ children }) {
-  const [productData, setProductData] = useState([]);
+  const [productData, setProductData] = useState({});
 
   return (
     <DataContext.Provider value={{ productData, setProductData }}>

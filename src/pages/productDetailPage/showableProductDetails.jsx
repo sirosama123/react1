@@ -50,7 +50,15 @@ export default function ShowableProductDetails(props) {
         <Grid item lg={11}>
           <div style={{height:'30px'}}></div>
           <div className="App">
-            <ImageSwitcher variations={variations} images={productData} initialBigImageSrc={productData[0]} colorList={colorList} />
+            <ImageSwitcher
+
+             
+            //  variations={productData['sizes']} 
+            //  images={productData['arrayImages']} 
+            //  initialBigImageSrc={productData['arrayImages'][0]} 
+            //  colorList={productData['colors']} 
+             productData={productData}
+             />
           </div>
           <div style={{height:'30px'}}></div>
           <CatName categoryHeading="Today's" productHeading="Related Products"/>

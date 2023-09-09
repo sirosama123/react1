@@ -31,6 +31,9 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { addToCart } from '../stateManagement/slices/cartSlice';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -149,14 +152,18 @@ function ImageMagnifier({
 
 
 
-const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) => {
+const ImageSwitcher = ({productData }) => {
+
+  const navigate = useNavigate();
+
+  const isBothListsEmpty = productData['colors'].length === 0 && productData['sizes'].length === 0;
   const sliderRef = useRef(null);
   const scrollAmount = 100;
 
   const sliderRefM = useRef(null);
   const scrollAmountM = 100;
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const incrementCounter = () => {
     setCount(prevCount => prevCount + 1);
@@ -185,10 +192,10 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
     setSelectedColor(color === selectedColor ? null : color);
   };
   useEffect(() => {
-    if (initialBigImageSrc) {
-      dispatch(setBigImage(initialBigImageSrc));
+    if (productData['arrayImages'][0]) {
+      dispatch(setBigImage(productData['arrayImages'][0]));
     }
-  }, [dispatch, initialBigImageSrc]);
+  }, [dispatch, productData['arrayImages'][0]]);
 
   const handleThumbnailClick = (newImageSrc) => {
     dispatch(setBigImage(newImageSrc));
@@ -197,6 +204,30 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
 
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
+  };
+
+
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({
+        id: productData['id'],
+        imageurl: productData['imageUrl'],
+        name: productData['name'],
+        price: productData['price'],
+        description: 'Some text about the product..',
+        rating: '5.0',
+        brandLogo: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Adidas_logo.png',
+        arrayImages: [
+          'https://ae01.alicdn.com/kf/S373750662cd24a4e94b5f89eb564a671k/PAGANI-DESIGN-2023-New-Men-s-Watches-Top-Luxury-Quartz-Watch-For-Men-Automatic-Date-Speed.jpg_220x220.jpg_.webp',
+          'https://ae01.alicdn.com/kf/S85ee678f2487499f9d81d9123637a348g/PAGANI-DESIGN-2023-New-Men-s-Watches-Top-Luxury-Quartz-Watch-For-Men-Automatic-Date-Speed.jpg_220x220.jpg_.webp',
+          'https://ae01.alicdn.com/kf/Sfecd5921e7e240e78abac46a2051041e1/PAGANI-DESIGN-2023-New-Men-s-Watches-Top-Luxury-Quartz-Watch-For-Men-Automatic-Date-Speed.jpg_220x220.jpg_.webp',
+          'https://ae01.alicdn.com/kf/S20f83ed86e824dd38f511dab6d6c38dd4/PAGANI-DESIGN-2023-New-Men-s-Watches-Top-Luxury-Quartz-Watch-For-Men-Automatic-Date-Speed.jpg_220x220.jpg_.webp',
+        ],
+        quantity: count,
+      })
+    );
+    navigate('/');
   };
 
   return (
@@ -242,7 +273,7 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
                         <FaArrowCircleUp />
                     </button>
                     <div className="images-container" ref={sliderRef}>
-                        {images.map((image) => {
+                        {productData['arrayImages'].map((image) => {
                           return (
 
                             <img
@@ -283,7 +314,7 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
                         <ChevronLeftIcon />
                       </button>
                       <div className="images-containerMobileView" ref={sliderRefM}>
-                        {images.map((image) => {
+                        {productData['arrayImages'].map((image) => {
                           return (
                             <img
 
@@ -405,53 +436,72 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
 
           </div>
 
-
-
-          <Typography sx={{ fontWeight: 'bolder', fontSize: '15px', color: 'black', marginY: '5px' }}>
-            Variations
-          </Typography>
-          <Typography sx={{ fontWeight: 'bold', fontSize: '12px', color: 'black', marginY: '5px' }}>
-           Available Colors:
-          </Typography>
-          <div className="color-selector">
-            {colorList.map((color, index) => (
-              <div className={`color-box-main ${selectedColor === color ? 'selected' : ''}`} >
-                <div
-                  key={index}
-                  className={`color-box ${selectedColor === color ? 'selected' : ''}`}
-                  style={{ backgroundColor: color }}
-                  onClick={() => handleColorClick(color)}
-                ></div>
-              </div>
-            ))}
-          </div>
-          <div style={{ height: '5px' }}></div>
-          <Box sx={{display:"flex",flexDirection:'row'}}>
-           <div>
-           <Typography sx={{ fontWeight: 'bold', fontSize: '12px', color: 'black', marginY: '5px' }}>
-           Available Sizes:
-          </Typography>
-          <div className="variation-selector">
-            {variations.map((variation, index) => (
-              <button
-                key={index}
-                className={`variation-button ${selectedVariation === variation ? 'selected' : ''}`}
-                onClick={() => handleVariationClick(variation)}
-              >
-                {variation}
-              </button>
-            ))}
-          </div>
-          <div style={{height:"10px"}}></div>
-         
-          
-
-         
-           </div>
-           <div>
+        
+      <div>
+       
+           <div style={{ display: isBothListsEmpty ? 'none' : 'block' }}>
             
-           </div>
-          </Box>
+
+           <Typography sx={{ fontWeight: 'bolder', fontSize: '15px', color: 'black', marginY: '5px' }}>
+              Variations
+            </Typography>
+           {productData['colors'].length > 0 &&( <>
+              <Typography sx={{ fontWeight: 'bold', fontSize: '12px', color: 'black', marginY: '5px' }}>
+              Available Colors:
+              </Typography>
+              <div className="color-selector">
+                {productData['colors'].map((color, index) => (
+                  <div className={`color-box-main ${selectedColor === color ? 'selected' : ''}`} >
+                    <div
+                      key={index}
+                      className={`color-box ${selectedColor === color ? 'selected' : ''}`}
+                      style={{ backgroundColor: color }}
+                      onClick={() => handleColorClick(color)}
+                    ></div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ height: '5px' }}></div>
+            </>)}
+            {productData['sizes'].length > 0 &&(<>
+              <Box sx={{display:"flex",flexDirection:'row'}}>
+             <div>
+             <Typography sx={{ fontWeight: 'bold', fontSize: '12px', color: 'black', marginY: '5px' }}>
+             Available Sizes:
+            </Typography>
+            <div className="variation-selector">
+              {productData['sizes'].map((variation, index) => (
+                <button
+                  key={index}
+                  className={`variation-button ${selectedVariation === variation ? 'selected' : ''}`}
+                  onClick={() => handleVariationClick(variation)}
+                >
+                  {variation}
+                </button>
+              ))}
+            </div>
+            <div style={{height:"10px"}}></div>
+             </div>
+             <div>
+              
+             </div>
+            </Box>
+            </>)}
+  
+  
+  
+            </div>
+        
+      </div>
+
+
+
+
+
+
+
+
+        
      
           <Typography sx={{ fontWeight: 'bold', fontSize: '15px', color: 'black', marginY: '5px' }}>
             Select Quantity:
@@ -478,7 +528,7 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
           <div style={{ height: '20px' }}></div>
           
            <Box sx={{display:"flex",alignItems:'flex-start',justifyContent:'flex-start'}}>
-           <Button sx={{
+           <Button onClick={handleAddToCart} sx={{
             width:'200px',
             height:'45px',
             fontSize: '12px',
@@ -489,7 +539,7 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
             backgroundColor:"#DB4444",
             marginX:'5px',
             '&:hover': {
-              backgroundColor: 'white', // Set the hover color here
+              backgroundColor: 'white',
               color: '#DB4444',
               border: '2px solid #DB4444',
             },
@@ -503,7 +553,7 @@ const ImageSwitcher = ({ images, initialBigImageSrc, colorList, variations }) =>
             border: '2px solid #DB4444',
             borderRadius:'20px',
             '&:hover': {
-              backgroundColor: '#DB4444', // Set the hover color here
+              backgroundColor: '#DB4444',
               color: 'white',
               border: '2px solid #DB4444',
             },

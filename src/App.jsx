@@ -48,6 +48,7 @@ import AllStores from './pages/AllStores/allStores';
 import TemporaryDrawer from './pages/landingPage/landing2';
 import BasicAccordion from './pages/testingAcodion';
 import { DataProvider } from './context/myData';
+import CustomizedSteppers from './pages/checkoutPage/mainCheckoutPage';
 
 
 
@@ -74,7 +75,7 @@ function App() {
   
  
   <DataProvider>
-  <Routing/>
+  <CustomizedSteppers/>
   </DataProvider>
       
       {/* <ShowableProductDetails images={images}/> */}

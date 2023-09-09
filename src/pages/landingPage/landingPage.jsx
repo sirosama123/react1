@@ -24,6 +24,7 @@ import { useSelector } from 'react-redux';
 import { CloseRounded } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import CartItems from '../../components/cartUi/cartMain';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 
 
@@ -40,6 +41,7 @@ function MainLandingPage() {
     const isVisible = useSelector((state) => state.visibility);
     const product22 = productData2.map((item) => (
       <ProductCard1
+        id={item.id}
         name={item.name}
         url={item.imageurl}
         price={item.price}
@@ -47,6 +49,8 @@ function MainLandingPage() {
         rating={item.rating}
         brandLogo={item.brandLogo}
         arrayImages={item.arrayImages}
+        colors={item.colors}
+        sizes={item.sizes}
       />
     ));
     const product23 = discountProdcts.map((item) => (

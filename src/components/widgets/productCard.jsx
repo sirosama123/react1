@@ -33,8 +33,16 @@ export default function ProductCard1(props) {
         "https://dealsorb.com/wp-content/uploads/2022/02/71jFHRn1kL._AC_SL1500_-1.jpg",
       ];
 
-      const handleProductDetailsClick = () => {
-        setProductData(props.arrayImages);
+      const handleProductDetailsClick = async () => {
+        await setProductData({
+            "id":props.id,
+            "name":props.name,
+            "imageUrl":props.arrayImages[0],
+            "price":props.price,
+            "arrayImages":props.arrayImages,
+            "sizes":props.sizes,
+            "colors":props.colors,
+        });
         navigate(`/product-details/${props.name}`);
       };
 

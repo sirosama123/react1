@@ -9,7 +9,7 @@ const store = configureStore({
     image: imageReducer,
     todo:todoReducer,
     visibility:cartVisibilitySlice,
-    cart: cartReducer,
+    allCart: cartReducer,
   },
 });
 
